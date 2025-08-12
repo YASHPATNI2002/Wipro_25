@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layout without colors and with spacing</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+       
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">
+                <header>&lt;header&gt;</header>
+            </td>
+        </tr>
+        <tr style="height:20px;"><td colspan="2"></td></tr> <!-- spacing -->
+        <tr>
+            <td colspan="2">
+                <nav>&lt;nav&gt;</nav>
+            </td>
+        </tr>
+        <tr style="height:20px;"><td colspan="2"></td></tr> <!-- spacing -->
+        <tr>
+            <td>
+                <aside>&lt;aside&gt;</aside>
+            </td>
+            <td>
+                <main>&lt;main&gt;</main>
+                <div>
+                    <article>&lt;article&gt;</article>
+                    <figure>&lt;figure&gt;</figure>
+                    <p>&lt;p&gt;</p>
+                    <section>&lt;section&gt;</section>
+                </div>
+            </td>
+        </tr>
+        <tr style="height:20px;"><td colspan="2"></td></tr> <!-- spacing -->
+        <tr>
+            <td colspan="2">
+                <footer>&lt;footer&gt;</footer>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
