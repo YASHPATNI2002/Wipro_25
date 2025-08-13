@@ -1,0 +1,32 @@
+/* Container styling */
+.container {
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+    padding: 10px;
+    position: relative;
+}
+
+/* Common box styling */
+.box {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Box 1 styling */
+.box1 {
+    background-color: blue;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+/* Box 2 styling */
+.box2 {
+    background-color: green;
+    margin-top: 50px; /* pushes it further down from top */
+    margin-left: 150px; /* moves it right relative to Box 1 */
+}

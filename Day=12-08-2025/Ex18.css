@@ -1,0 +1,72 @@
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px 25px;
+    background: #ffffffcc; /* semi-transparent white */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 28px;
+    color: #1e40af; /* darker blue */
+}
+
+.form-label {
+    font-weight: 600;
+    color: #1e3a8a; /* indigo-ish */
+}
+
+.form-control {
+    border: 2px solid #cbd5e1; /* light blue-gray */
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #2563eb; /* bright blue */
+    box-shadow: 0 0 8px #2563eb88;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.btn-primary:hover {
+    background-color: #1e40af;
+    border-color: #1e40af;
+}
+
+.form-check-label {
+    color: #334155; /* grayish blue */
+    font-weight: 500;
+}
+
+.forgot-password a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
