@@ -1,0 +1,39 @@
+/* Container for all books */
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;            /* spacing between books */
+  justify-content: center;
+  margin: 20px;
+}
+
+/* Individual book card */
+.book {
+  flex: 0 0 calc(20% - 20px); /* 5 books per row, minus gap */
+  box-sizing: border-box;      /* include padding/border in width */
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Book image */
+.book img {
+  width: 100%;        /* fit container width */
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Book title */
+.book h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Book description */
+.book p {
+  font-size: 14px;
+  color: #555;
+}

@@ -1,0 +1,14 @@
+h2 {
+  color: darkblue;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  font-size: 18px;
+  color: darkgreen;
+  margin: 5px 0;
+}

@@ -1,0 +1,7 @@
+<div style="text-align:center; margin-top:20px;">
+  <label>
+    <input type="checkbox" (change)="toggleMessage($event)"> Show Message
+  </label>
+
+  <p *ngIf="showMessage">Hello! This message is now visible.</p>
+</div>

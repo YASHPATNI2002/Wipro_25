@@ -1,0 +1,9 @@
+<div style="text-align:center; margin-top:20px;">
+  <select [(ngModel)]="selectedColor">
+    <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
+  </select>
+
+  <p [style.color]="selectedColor">
+    This text changes color based on the dropdown selection.
+  </p>
+</div>

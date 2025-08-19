@@ -1,0 +1,7 @@
+<div style="text-align:center; margin-top:20px;">
+  <select>
+    <option *ngFor="let country of dropdownItems">{{ country }}</option>
+  </select>
+
+  <button (click)="loadCountries()">Load</button>
+</div>
