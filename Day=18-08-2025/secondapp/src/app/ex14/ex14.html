@@ -1,0 +1,8 @@
+<div style="text-align:center; margin-top:20px;">
+  <h2>Search Names</h2>
+  <input type="text" [(ngModel)]="searchText" placeholder="Type to search..." />
+
+  <ul>
+    <li *ngFor="let name of filteredNames">{{ name }}</li>
+  </ul>
+</div>

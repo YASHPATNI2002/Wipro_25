@@ -1,0 +1,17 @@
+<form th:action="@{${employee.id} != null ? '/employees/edit' : '/employees/add'}" th:object="${employee}" method="post">
+    
+    <!-- Add this hidden input -->
+    <input type="hidden" th:field="*{id}" />
+    
+    Name: <input type="text" th:field="*{name}" /><br/>
+    Employee Type:
+    <select th:field="*{employeeType}">
+        <option value="REGULAR">REGULAR</option>
+        <option value="CONTRACT">CONTRACT</option>
+    </select><br/>
+    Department:
+    <select th:field="*{department.id}" >
+        <option th:each="dept : ${departments}" th:value="${dept.id}" th:text="${dept.name}"></option>
+    </select><br/>
+    <button type="submit">Submit</button>
+</form>

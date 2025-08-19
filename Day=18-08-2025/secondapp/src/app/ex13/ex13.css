@@ -1,0 +1,10 @@
+select {
+  margin-bottom: 15px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: bold;
+}
