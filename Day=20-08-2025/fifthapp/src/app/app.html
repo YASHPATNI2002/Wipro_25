@@ -1,0 +1,37 @@
+<div style="max-width:480px;margin:40px auto;font-family:sans-serif;">
+  <label for="txt">Type something:</label><br/>
+  <input id="txt" type="text" [(ngModel)]="text" placeholder="e.g. ja or jay"
+         style="width:100%;padding:8px;margin-top:6px;">
+  <p style="margin-top:16px;"><strong>Uppercase:</strong> {{ text | uppercase }}</p>
+</div>
+
+<div style="max-width:480px;margin:40px auto;font-family:sans-serif;">
+  <label for="cal">Choose a date:</label><br/>
+  <input id="cal" type="date" [(ngModel)]="selectedDate"
+         style="padding:8px; margin-top:6px;"/>
+
+  <p style="margin-top:16px;">
+    <strong>Selected Date:</strong>
+    {{ selectedDate ? (selectedDate | date:'short') : 'No date selected' }}
+  </p>
+</div>
+<div style="max-width:480px;margin:40px auto;font-family:sans-serif;">
+  <label for="cel">Enter Temperature in °C:</label><br/>
+  <input id="cel" type="number" [(ngModel)]="celsiusValue"
+         style="width:100%;padding:8px;margin-top:6px;" placeholder="e.g. 20">
+
+  <p style="margin-top:16px;">
+    <strong>Fahrenheit:</strong> {{ celsiusValue | celsiusToFahrenheit }}
+  </p>
+</div>
+<div style="max-width:480px;margin:40px auto;font-family:sans-serif;">
+  <label for="txt">Type something:</label><br/>
+  <input id="txt" type="text" [(ngModel)]="text"
+         style="width:100%;padding:8px;margin-top:6px;" placeholder="Start typing..." />
+
+  <p appHighlightStrikethru style="display:inline-block; margin-top:16px; padding:2px 4px;">
+    {{ text  }}
+  </p>
+</div>
+
+

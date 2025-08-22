@@ -1,0 +1,10 @@
+
+<div [ngStyle]="{'color': flag1 ? 'blue' : 'red', 'font-size': '18px'}">
+  This text changes color based on flag1
+</div>
+
+<div [ngStyle]="{'color': color1, 'font-size': fontSize1}">
+  This text uses variables for color and font size
+</div>
+
+<button (click)="flag1 = !flag1">Toggle Color</button>
