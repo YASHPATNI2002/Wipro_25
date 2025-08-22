@@ -1,0 +1,16 @@
+<h2>ngClass Example</h2>
+
+<div [ngClass]="'app1'">
+  This div uses string syntax
+</div>
+
+<div [ngClass]="['app1', 'app2']">
+  This div uses array syntax
+</div>
+
+<div [ngClass]="{'app1': flag1, 'app2': flag2}">
+  This div uses object syntax
+</div>
+
+<button (click)="flag1 = !flag1">Toggle app1</button>
+<button (click)="flag2 = !flag2">Toggle app2</button>

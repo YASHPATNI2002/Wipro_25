@@ -1,0 +1,32 @@
+{
+  "vehicles": [
+    {
+      "id": "1",
+      "make": "Toyota",
+      "fuelType": "Petrol",
+      "model": "Corolla",
+      "price": 1500000
+    },
+    {
+      "id": "2",
+      "make": "Tata",
+      "fuelType": "Diesel",
+      "model": "Harrier",
+      "price": 2000000
+    },
+    {
+      "id": "3",
+      "make": "Hyundai",
+      "fuelType": "CNG",
+      "model": "Grand i10",
+      "price": 800000
+    },
+    {
+      "id": "4",
+      "make": "MG",
+      "fuelType": "Electric",
+      "model": "ZS EV",
+      "price": 2300000
+    }
+  ]
+}

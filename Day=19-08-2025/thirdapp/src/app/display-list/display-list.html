@@ -1,0 +1,6 @@
+<div *ngFor="let fruit of items" class="fruit-card">
+  <img [src]="fruit.image" alt="{{fruit.name}}" width="120" height="120" style="object-fit: cover;">
+  <h5>{{ fruit.name }}</h5>
+  <p>{{ fruit.description }}</p>
+  <button (click)="remove(fruit.name)">Remove</button>
+</div>

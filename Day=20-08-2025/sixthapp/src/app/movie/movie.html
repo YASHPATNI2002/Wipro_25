@@ -1,0 +1,57 @@
+<div class="container">
+  <h2>Movie Manager</h2>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form">
+    <div class="row">
+      <label for="name">Movie Name</label>
+      <input id="name" type="text" name="movieName" [(ngModel)]="form.movieName" required
+             placeholder="e.g. Interstellar">
+    </div>
+
+    <div class="row">
+      <label for="lang">Language</label>
+      <input id="lang" type="text" name="language" [(ngModel)]="form.language" required
+             placeholder="e.g. English">
+    </div>
+
+    <div class="row">
+      <label for="imdb">IMDb Rating (0–10)</label>
+      <input id="imdb" type="number" name="imdbRating" [(ngModel)]="form.imdbRating"
+             required min="0" max="10" step="0.1" placeholder="e.g. 8.5">
+    </div>
+
+    <div class="actions">
+      <button type="submit" [disabled]="f.invalid">{{ editingId ? 'Update' : 'Add' }}</button>
+      <button type="button" class="secondary" (click)="reset(f)">Reset</button>
+    </div>
+  </form>
+
+  <h3 class="list-title">Movies ({{ movies.length }})</h3>
+  <table class="table" *ngIf="movies.length; else noData">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Language</th>
+        <th>IMDb</th>
+        <th class="actions-col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of movies; trackBy: trackById">
+        <td>{{ m.movieId }}</td>
+        <td>{{ m.movieName }}</td>
+        <td>{{ m.language }}</td>
+        <td>{{ m.imdbRating }}</td>
+        <td>
+          <button type="button" (click)="edit(m)">Edit</button>
+          <button type="button" class="danger" (click)="remove(m.movieId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p>No movies yet. Add one above.</p>
+  </ng-template>
+</div>
