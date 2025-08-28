@@ -1,0 +1,77 @@
+<h2>Registration Form</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+    </mat-form-field>
+    @if (f['name'].invalid && (f['name'].touched || f['name'].dirty)) {
+      @if (f['name'].errors?.['required']) {
+        <mat-error>Name is required</mat-error>
+      }
+      @if (f['name'].errors?.['minlength']) {
+        <mat-error>Minimum 2 characters</mat-error>
+      }
+    }
+  
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+    @if (f['email'].invalid && (f['email'].touched || f['email'].dirty)) {
+      @if (f['email'].errors?.['required']) {
+        <mat-error>Email is required</mat-error>
+      }
+      @if (f['email'].errors?.['email']) {
+        <mat-error>Email is not in correct format</mat-error>
+      }
+    }
+  
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Date of Birth</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      formControlName="dob"
+      [min]="minDob"
+      [max]="maxDob"
+      placeholder="Select date"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    @if (f['dob'].invalid && (f['dob'].touched || f['dob'].dirty)) {
+      @if (f['dob'].errors?.['required']) {
+        <mat-error>Date of Birth is required</mat-error>
+      }
+    }
+  
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Subject of Study</mat-label>
+    <mat-select formControlName="subject">
+      @for (s of subjects; track s) {
+        <mat-option [value]="s">{{ s }}</mat-option>
+      }
+    </mat-select>
+    </mat-form-field>
+    @if (f['subject'].invalid && (f['subject'].touched || f['subject'].dirty)) {
+      @if (f['subject'].errors?.['required']) {
+        <mat-error>Please select a subject</mat-error>
+      }
+    }
+  
+
+  <div class="actions">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid && form.touched">
+      Submit
+    </button>
+    <button mat-button type="button" (click)="reset()">Reset</button>
+  </div>
+</form>

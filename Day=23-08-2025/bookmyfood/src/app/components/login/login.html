@@ -1,0 +1,55 @@
+<section class="login-wrap">
+  <div class="login-card shadow-lg">
+    <div class="brand">
+      <div class="logo">🍔</div>
+      <h1 class="title">BookMyFood</h1>
+      <p class="subtitle">Welcome back! Please sign in.</p>
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)" novalidate>
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="you@example.com"
+          name="email"
+          [(ngModel)]="creds.email"
+          required
+          email
+          [class.is-invalid]="loginForm.submitted && email.invalid"
+          #email="ngModel"
+        />
+        <label for="email">Email</label>
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+
+      <div class="form-floating mb-2">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="••••••••"
+          name="passWord"
+          [(ngModel)]="creds.passWord"
+          required
+          minlength="3"
+          [class.is-invalid]="loginForm.submitted && pass.invalid"
+          #pass="ngModel"
+        />
+        <label for="password">Password</label>
+        <div class="invalid-feedback">Password is required.</div>
+      </div>
+
+      <div *ngIf="err" class="alert alert-danger py-2 mb-3">{{ err }}</div>
+
+      <button class="btn btn-primary w-100 btn-lg d-flex align-items-center justify-content-center" type="submit" [disabled]="loading">
+        <span *ngIf="!loading">Login</span>
+        <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+        <span *ngIf="loading">Signing in…</span>
+      </button>
+
+      <p class="hint text-center mt-3">Tip: use your registered email & password</p>
+    </form>
+  </div>
+</section>

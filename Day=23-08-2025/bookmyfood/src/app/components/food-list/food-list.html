@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Food List</h3>
+    <button class="btn btn-outline-secondary btn-sm" (click)="load()">Refresh</button>
+  </div>
+
+  <div *ngIf="loading" class="alert alert-info">Loading foods...</div>
+  <div *ngIf="err" class="alert alert-danger">{{ err }}</div>
+
+  <div class="row g-3" *ngIf="!loading && !err">
+    <div class="col-md-4" *ngFor="let f of foods">
+      <div class="card h-100 shadow-sm">
+        <img [src]="f.imageUrl || ('https://picsum.photos/seed/' + f.id + '/300/200')" class="card-img-top" [alt]="f.name">
+        <div class="card-body">
+          <h5 class="card-title">{{ f.name }}</h5>
+          <p class="card-text mb-1"><b>Category:</b> {{ f.category }}</p>
+          <p class="card-text mb-1"><b>Price:</b> ₹{{ f.price }}</p>
+          <span class="badge" [class.bg-success]="f.available" [class.bg-secondary]="!f.available">
+            {{ f.available ? 'Available' : 'Not Available' }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
