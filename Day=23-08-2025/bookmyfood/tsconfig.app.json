@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [],
+    "composite": true,
+    "lib": ["ES2022", "DOM"],
+    "module": "ES2022",                 // ✅ add this
+    "moduleResolution": "bundler"       // ✅ keep this
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
+}

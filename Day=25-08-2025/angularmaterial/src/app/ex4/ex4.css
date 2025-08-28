@@ -1,0 +1,14 @@
+.form {
+  max-width: 480px;
+  margin: 16px auto;
+  display: grid;
+  gap: 12px;
+}
+.full {
+  width: 100%;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
